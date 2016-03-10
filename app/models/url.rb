@@ -39,4 +39,10 @@ class Url < ActiveRecord::Base
   def self.gen_token
     (0...Url::UNIQUE_KEY_LENGTH).map{ CHARSETS[rand(CHARSETS.size)] }.join
   end
+
+  def self.clean_up_old_url
+    logger.info "Kick start clean up job"
+    self.where("created_at <= ?", Time.zone.now - 15.days).delete_all
+    logger.info "Finished clean up job"
+  end
 end
