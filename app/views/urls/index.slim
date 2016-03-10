@@ -1,0 +1,34 @@
+.row
+  .col-md-12
+    p#notice
+      = notice
+    h1
+      | Urls Shortener
+    p.text-right
+      = link_to 'Create New Shorten Url', new_url_path, class: 'btn btn-primary'
+    table.table.table-hover
+      thead
+        tr
+          th
+            | Origin url
+          th
+            | Shorten url
+          th
+            | Hit Count
+          th[colspan="3"]
+      tbody
+        - @urls.each do |url|
+          tr
+            td
+              = url.origin_url
+            td
+              = url.shorten_url
+            td
+              = url.count
+            td
+              = link_to 'Show', url, class: 'btn btn-primary'
+            td
+              = link_to 'Edit', edit_url_path(url), class: 'btn btn-primary'
+            td
+              = link_to 'Destroy', url, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'
+
