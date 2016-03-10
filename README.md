@@ -7,6 +7,8 @@ You will need to install rvm by yourself, and make sure postgres server is insta
 ``` bash
 >rvm install 2.2.3
 >bundle install
+>rake db:create
+>rake db:migrate
 >rails server
 ```
 
@@ -21,5 +23,5 @@ page](https://github.com/javan/whenever) for more detail.
 
 For local testing
 ``` bash
-rails runner Url.clean_up_old_url
+>rails runner Url.clean_up_old_url
 ```
