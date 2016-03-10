@@ -22,8 +22,8 @@
             td
               = url.origin_url
             td
-              = url.shorten_url
+              = display_shorten_url(url)
             td
               = url.count
             td
-              = link_to 'Try it now!', url, class: 'btn btn-primary'
+              = link_to 'Try it now!', tokened_shorten_url_path(url), class: 'btn btn-primary'
