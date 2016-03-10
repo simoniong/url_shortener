@@ -20,9 +20,9 @@ ActiveRecord::Schema.define(version: 20160310074226) do
     t.string   "shorten_url"
     t.string   "origin_url"
     t.string   "token"
-    t.integer  "count"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "count",       default: 0
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
 end

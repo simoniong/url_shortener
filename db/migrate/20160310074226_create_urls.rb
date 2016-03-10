@@ -4,7 +4,7 @@ class CreateUrls < ActiveRecord::Migration
       t.string :shorten_url
       t.string :origin_url
       t.string :token
-      t.integer :count
+      t.integer :count, default: 0
 
       t.timestamps null: false
     end
